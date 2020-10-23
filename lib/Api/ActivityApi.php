@@ -121,15 +121,15 @@ class ActivityApi
      * Get Activity Actions Feed
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject8 $inline_object8 inline_object8 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\GetActivityActionsFeedResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors
      */
-    public function getActivityActionsFeed($app_id, $inline_object8 = null)
+    public function getActivityActionsFeed($app_id, $config = null)
     {
-        list($response) = $this->getActivityActionsFeedWithHttpInfo($app_id, $inline_object8);
+        list($response) = $this->getActivityActionsFeedWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -139,15 +139,15 @@ class ActivityApi
      * Get Activity Actions Feed
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject8 $inline_object8 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\GetActivityActionsFeedResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getActivityActionsFeedWithHttpInfo($app_id, $inline_object8 = null)
+    public function getActivityActionsFeedWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getActivityActionsFeedRequest($app_id, $inline_object8);
+        $request = $this->getActivityActionsFeedRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -268,14 +268,14 @@ class ActivityApi
      * Get Activity Actions Feed
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject8 $inline_object8 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getActivityActionsFeedAsync($app_id, $inline_object8 = null)
+    public function getActivityActionsFeedAsync($app_id, $config = null)
     {
-        return $this->getActivityActionsFeedAsyncWithHttpInfo($app_id, $inline_object8)
+        return $this->getActivityActionsFeedAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -289,15 +289,15 @@ class ActivityApi
      * Get Activity Actions Feed
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject8 $inline_object8 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getActivityActionsFeedAsyncWithHttpInfo($app_id, $inline_object8 = null)
+    public function getActivityActionsFeedAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\GetActivityActionsFeedResult';
-        $request = $this->getActivityActionsFeedRequest($app_id, $inline_object8);
+        $request = $this->getActivityActionsFeedRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -337,12 +337,12 @@ class ActivityApi
      * Create request for operation 'getActivityActionsFeed'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject8 $inline_object8 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getActivityActionsFeedRequest($app_id, $inline_object8 = null)
+    protected function getActivityActionsFeedRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -375,8 +375,8 @@ class ActivityApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object8)) {
-            $_tempBody = $inline_object8;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -451,15 +451,15 @@ class ActivityApi
      * Get Activity Feed
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject7 $inline_object7 inline_object7 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\GetActivityFeedResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors
      */
-    public function getActivityFeed($app_id, $inline_object7 = null)
+    public function getActivityFeed($app_id, $config = null)
     {
-        list($response) = $this->getActivityFeedWithHttpInfo($app_id, $inline_object7);
+        list($response) = $this->getActivityFeedWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -469,15 +469,15 @@ class ActivityApi
      * Get Activity Feed
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject7 $inline_object7 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\GetActivityFeedResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getActivityFeedWithHttpInfo($app_id, $inline_object7 = null)
+    public function getActivityFeedWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getActivityFeedRequest($app_id, $inline_object7);
+        $request = $this->getActivityFeedRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -598,14 +598,14 @@ class ActivityApi
      * Get Activity Feed
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject7 $inline_object7 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getActivityFeedAsync($app_id, $inline_object7 = null)
+    public function getActivityFeedAsync($app_id, $config = null)
     {
-        return $this->getActivityFeedAsyncWithHttpInfo($app_id, $inline_object7)
+        return $this->getActivityFeedAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -619,15 +619,15 @@ class ActivityApi
      * Get Activity Feed
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject7 $inline_object7 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getActivityFeedAsyncWithHttpInfo($app_id, $inline_object7 = null)
+    public function getActivityFeedAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\GetActivityFeedResult';
-        $request = $this->getActivityFeedRequest($app_id, $inline_object7);
+        $request = $this->getActivityFeedRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -667,12 +667,12 @@ class ActivityApi
      * Create request for operation 'getActivityFeed'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject7 $inline_object7 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getActivityFeedRequest($app_id, $inline_object7 = null)
+    protected function getActivityFeedRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -705,8 +705,8 @@ class ActivityApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object7)) {
-            $_tempBody = $inline_object7;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -781,15 +781,15 @@ class ActivityApi
      * Get Activity on Object
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject6 $inline_object6 inline_object6 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\GetActivityOnObjectResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors
      */
-    public function getActivityOnObject($app_id, $inline_object6 = null)
+    public function getActivityOnObject($app_id, $config = null)
     {
-        list($response) = $this->getActivityOnObjectWithHttpInfo($app_id, $inline_object6);
+        list($response) = $this->getActivityOnObjectWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -799,15 +799,15 @@ class ActivityApi
      * Get Activity on Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject6 $inline_object6 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\GetActivityOnObjectResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getActivityOnObjectWithHttpInfo($app_id, $inline_object6 = null)
+    public function getActivityOnObjectWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getActivityOnObjectRequest($app_id, $inline_object6);
+        $request = $this->getActivityOnObjectRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -928,14 +928,14 @@ class ActivityApi
      * Get Activity on Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject6 $inline_object6 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getActivityOnObjectAsync($app_id, $inline_object6 = null)
+    public function getActivityOnObjectAsync($app_id, $config = null)
     {
-        return $this->getActivityOnObjectAsyncWithHttpInfo($app_id, $inline_object6)
+        return $this->getActivityOnObjectAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -949,15 +949,15 @@ class ActivityApi
      * Get Activity on Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject6 $inline_object6 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getActivityOnObjectAsyncWithHttpInfo($app_id, $inline_object6 = null)
+    public function getActivityOnObjectAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\GetActivityOnObjectResult';
-        $request = $this->getActivityOnObjectRequest($app_id, $inline_object6);
+        $request = $this->getActivityOnObjectRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -997,12 +997,12 @@ class ActivityApi
      * Create request for operation 'getActivityOnObject'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject6 $inline_object6 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getActivityOnObjectRequest($app_id, $inline_object6 = null)
+    protected function getActivityOnObjectRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1035,8 +1035,8 @@ class ActivityApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object6)) {
-            $_tempBody = $inline_object6;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {

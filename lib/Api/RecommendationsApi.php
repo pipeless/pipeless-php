@@ -121,15 +121,15 @@ class RecommendationsApi
      * Get Recommended Content (for user)
      *
      * @param  string $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject10 $inline_object10 inline_object10 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\RecommendationsResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors
      */
-    public function getRecommendedContent($app_id, $inline_object10 = null)
+    public function getRecommendedContent($app_id, $config = null)
     {
-        list($response) = $this->getRecommendedContentWithHttpInfo($app_id, $inline_object10);
+        list($response) = $this->getRecommendedContentWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -139,15 +139,15 @@ class RecommendationsApi
      * Get Recommended Content (for user)
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject10 $inline_object10 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\RecommendationsResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRecommendedContentWithHttpInfo($app_id, $inline_object10 = null)
+    public function getRecommendedContentWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getRecommendedContentRequest($app_id, $inline_object10);
+        $request = $this->getRecommendedContentRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -268,14 +268,14 @@ class RecommendationsApi
      * Get Recommended Content (for user)
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject10 $inline_object10 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRecommendedContentAsync($app_id, $inline_object10 = null)
+    public function getRecommendedContentAsync($app_id, $config = null)
     {
-        return $this->getRecommendedContentAsyncWithHttpInfo($app_id, $inline_object10)
+        return $this->getRecommendedContentAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -289,15 +289,15 @@ class RecommendationsApi
      * Get Recommended Content (for user)
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject10 $inline_object10 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRecommendedContentAsyncWithHttpInfo($app_id, $inline_object10 = null)
+    public function getRecommendedContentAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\RecommendationsResult';
-        $request = $this->getRecommendedContentRequest($app_id, $inline_object10);
+        $request = $this->getRecommendedContentRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -337,12 +337,12 @@ class RecommendationsApi
      * Create request for operation 'getRecommendedContent'
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject10 $inline_object10 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRecommendedContentRequest($app_id, $inline_object10 = null)
+    protected function getRecommendedContentRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -371,8 +371,8 @@ class RecommendationsApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object10)) {
-            $_tempBody = $inline_object10;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -447,15 +447,15 @@ class RecommendationsApi
      * Get Recommended Users to Follow (for user)
      *
      * @param  string $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject11 $inline_object11 inline_object11 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\RecommendationsResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors
      */
-    public function getRecommendedUsersToFollow($app_id, $inline_object11 = null)
+    public function getRecommendedUsersToFollow($app_id, $config = null)
     {
-        list($response) = $this->getRecommendedUsersToFollowWithHttpInfo($app_id, $inline_object11);
+        list($response) = $this->getRecommendedUsersToFollowWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -465,15 +465,15 @@ class RecommendationsApi
      * Get Recommended Users to Follow (for user)
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject11 $inline_object11 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\RecommendationsResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRecommendedUsersToFollowWithHttpInfo($app_id, $inline_object11 = null)
+    public function getRecommendedUsersToFollowWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getRecommendedUsersToFollowRequest($app_id, $inline_object11);
+        $request = $this->getRecommendedUsersToFollowRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -594,14 +594,14 @@ class RecommendationsApi
      * Get Recommended Users to Follow (for user)
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject11 $inline_object11 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRecommendedUsersToFollowAsync($app_id, $inline_object11 = null)
+    public function getRecommendedUsersToFollowAsync($app_id, $config = null)
     {
-        return $this->getRecommendedUsersToFollowAsyncWithHttpInfo($app_id, $inline_object11)
+        return $this->getRecommendedUsersToFollowAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -615,15 +615,15 @@ class RecommendationsApi
      * Get Recommended Users to Follow (for user)
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject11 $inline_object11 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRecommendedUsersToFollowAsyncWithHttpInfo($app_id, $inline_object11 = null)
+    public function getRecommendedUsersToFollowAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\RecommendationsResult';
-        $request = $this->getRecommendedUsersToFollowRequest($app_id, $inline_object11);
+        $request = $this->getRecommendedUsersToFollowRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -663,12 +663,12 @@ class RecommendationsApi
      * Create request for operation 'getRecommendedUsersToFollow'
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject11 $inline_object11 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRecommendedUsersToFollowRequest($app_id, $inline_object11 = null)
+    protected function getRecommendedUsersToFollowRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -697,8 +697,8 @@ class RecommendationsApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object11)) {
-            $_tempBody = $inline_object11;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -773,15 +773,15 @@ class RecommendationsApi
      * Get Related Content
      *
      * @param  string $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject13 $inline_object13 inline_object13 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\RecommendationsResult
      */
-    public function getRelatedContent($app_id, $inline_object13 = null)
+    public function getRelatedContent($app_id, $config = null)
     {
-        list($response) = $this->getRelatedContentWithHttpInfo($app_id, $inline_object13);
+        list($response) = $this->getRelatedContentWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -791,15 +791,15 @@ class RecommendationsApi
      * Get Related Content
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject13 $inline_object13 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\RecommendationsResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRelatedContentWithHttpInfo($app_id, $inline_object13 = null)
+    public function getRelatedContentWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getRelatedContentRequest($app_id, $inline_object13);
+        $request = $this->getRelatedContentRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -880,14 +880,14 @@ class RecommendationsApi
      * Get Related Content
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject13 $inline_object13 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRelatedContentAsync($app_id, $inline_object13 = null)
+    public function getRelatedContentAsync($app_id, $config = null)
     {
-        return $this->getRelatedContentAsyncWithHttpInfo($app_id, $inline_object13)
+        return $this->getRelatedContentAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -901,15 +901,15 @@ class RecommendationsApi
      * Get Related Content
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject13 $inline_object13 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRelatedContentAsyncWithHttpInfo($app_id, $inline_object13 = null)
+    public function getRelatedContentAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\RecommendationsResult';
-        $request = $this->getRelatedContentRequest($app_id, $inline_object13);
+        $request = $this->getRelatedContentRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -949,12 +949,12 @@ class RecommendationsApi
      * Create request for operation 'getRelatedContent'
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject13 $inline_object13 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRelatedContentRequest($app_id, $inline_object13 = null)
+    protected function getRelatedContentRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -983,8 +983,8 @@ class RecommendationsApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object13)) {
-            $_tempBody = $inline_object13;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -1059,15 +1059,15 @@ class RecommendationsApi
      * Get Related Tags
      *
      * @param  string $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject12 $inline_object12 inline_object12 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\RecommendationsResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors
      */
-    public function getRelatedTags($app_id, $inline_object12 = null)
+    public function getRelatedTags($app_id, $config = null)
     {
-        list($response) = $this->getRelatedTagsWithHttpInfo($app_id, $inline_object12);
+        list($response) = $this->getRelatedTagsWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -1077,15 +1077,15 @@ class RecommendationsApi
      * Get Related Tags
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject12 $inline_object12 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\RecommendationsResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRelatedTagsWithHttpInfo($app_id, $inline_object12 = null)
+    public function getRelatedTagsWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getRelatedTagsRequest($app_id, $inline_object12);
+        $request = $this->getRelatedTagsRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1206,14 +1206,14 @@ class RecommendationsApi
      * Get Related Tags
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject12 $inline_object12 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRelatedTagsAsync($app_id, $inline_object12 = null)
+    public function getRelatedTagsAsync($app_id, $config = null)
     {
-        return $this->getRelatedTagsAsyncWithHttpInfo($app_id, $inline_object12)
+        return $this->getRelatedTagsAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1227,15 +1227,15 @@ class RecommendationsApi
      * Get Related Tags
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject12 $inline_object12 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRelatedTagsAsyncWithHttpInfo($app_id, $inline_object12 = null)
+    public function getRelatedTagsAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\RecommendationsResult';
-        $request = $this->getRelatedTagsRequest($app_id, $inline_object12);
+        $request = $this->getRelatedTagsRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1275,12 +1275,12 @@ class RecommendationsApi
      * Create request for operation 'getRelatedTags'
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject12 $inline_object12 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRelatedTagsRequest($app_id, $inline_object12 = null)
+    protected function getRelatedTagsRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1309,8 +1309,8 @@ class RecommendationsApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object12)) {
-            $_tempBody = $inline_object12;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -1385,15 +1385,15 @@ class RecommendationsApi
      * Get Related Users
      *
      * @param  string $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject14 $inline_object14 inline_object14 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\RecommendationsResult|object|object
      */
-    public function getRelatedUsers($app_id, $inline_object14 = null)
+    public function getRelatedUsers($app_id, $config = null)
     {
-        list($response) = $this->getRelatedUsersWithHttpInfo($app_id, $inline_object14);
+        list($response) = $this->getRelatedUsersWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -1403,15 +1403,15 @@ class RecommendationsApi
      * Get Related Users
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject14 $inline_object14 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\RecommendationsResult|object|object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRelatedUsersWithHttpInfo($app_id, $inline_object14 = null)
+    public function getRelatedUsersWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getRelatedUsersRequest($app_id, $inline_object14);
+        $request = $this->getRelatedUsersRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1532,14 +1532,14 @@ class RecommendationsApi
      * Get Related Users
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject14 $inline_object14 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRelatedUsersAsync($app_id, $inline_object14 = null)
+    public function getRelatedUsersAsync($app_id, $config = null)
     {
-        return $this->getRelatedUsersAsyncWithHttpInfo($app_id, $inline_object14)
+        return $this->getRelatedUsersAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1553,15 +1553,15 @@ class RecommendationsApi
      * Get Related Users
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject14 $inline_object14 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRelatedUsersAsyncWithHttpInfo($app_id, $inline_object14 = null)
+    public function getRelatedUsersAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\RecommendationsResult';
-        $request = $this->getRelatedUsersRequest($app_id, $inline_object14);
+        $request = $this->getRelatedUsersRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1601,12 +1601,12 @@ class RecommendationsApi
      * Create request for operation 'getRelatedUsers'
      *
      * @param  string $app_id (required)
-     * @param  \Pipeless\Model\InlineObject14 $inline_object14 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRelatedUsersRequest($app_id, $inline_object14 = null)
+    protected function getRelatedUsersRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1635,8 +1635,8 @@ class RecommendationsApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object14)) {
-            $_tempBody = $inline_object14;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
