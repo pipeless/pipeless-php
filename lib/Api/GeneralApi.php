@@ -121,15 +121,15 @@ class GeneralApi
      * Create Event
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject $inline_object inline_object (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object|object|\Pipeless\Model\Errors
      */
-    public function createEvent($app_id, $inline_object = null)
+    public function createEvent($app_id, $config = null)
     {
-        list($response) = $this->createEventWithHttpInfo($app_id, $inline_object);
+        list($response) = $this->createEventWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -139,15 +139,15 @@ class GeneralApi
      * Create Event
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject $inline_object (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object|object|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createEventWithHttpInfo($app_id, $inline_object = null)
+    public function createEventWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->createEventRequest($app_id, $inline_object);
+        $request = $this->createEventRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -268,14 +268,14 @@ class GeneralApi
      * Create Event
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject $inline_object (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEventAsync($app_id, $inline_object = null)
+    public function createEventAsync($app_id, $config = null)
     {
-        return $this->createEventAsyncWithHttpInfo($app_id, $inline_object)
+        return $this->createEventAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -289,15 +289,15 @@ class GeneralApi
      * Create Event
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject $inline_object (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEventAsyncWithHttpInfo($app_id, $inline_object = null)
+    public function createEventAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = 'object';
-        $request = $this->createEventRequest($app_id, $inline_object);
+        $request = $this->createEventRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -337,12 +337,12 @@ class GeneralApi
      * Create request for operation 'createEvent'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject $inline_object (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createEventRequest($app_id, $inline_object = null)
+    protected function createEventRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -375,8 +375,8 @@ class GeneralApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object)) {
-            $_tempBody = $inline_object;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -451,15 +451,15 @@ class GeneralApi
      * Create Events Batch
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject2 $inline_object2 inline_object2 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object|object|\Pipeless\Model\Errors
      */
-    public function createEventsBatch($app_id, $inline_object2 = null)
+    public function createEventsBatch($app_id, $config = null)
     {
-        list($response) = $this->createEventsBatchWithHttpInfo($app_id, $inline_object2);
+        list($response) = $this->createEventsBatchWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -469,15 +469,15 @@ class GeneralApi
      * Create Events Batch
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject2 $inline_object2 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object|object|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createEventsBatchWithHttpInfo($app_id, $inline_object2 = null)
+    public function createEventsBatchWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->createEventsBatchRequest($app_id, $inline_object2);
+        $request = $this->createEventsBatchRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -598,14 +598,14 @@ class GeneralApi
      * Create Events Batch
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject2 $inline_object2 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEventsBatchAsync($app_id, $inline_object2 = null)
+    public function createEventsBatchAsync($app_id, $config = null)
     {
-        return $this->createEventsBatchAsyncWithHttpInfo($app_id, $inline_object2)
+        return $this->createEventsBatchAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -619,15 +619,15 @@ class GeneralApi
      * Create Events Batch
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject2 $inline_object2 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEventsBatchAsyncWithHttpInfo($app_id, $inline_object2 = null)
+    public function createEventsBatchAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = 'object';
-        $request = $this->createEventsBatchRequest($app_id, $inline_object2);
+        $request = $this->createEventsBatchRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -667,12 +667,12 @@ class GeneralApi
      * Create request for operation 'createEventsBatch'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject2 $inline_object2 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createEventsBatchRequest($app_id, $inline_object2 = null)
+    protected function createEventsBatchRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -701,8 +701,8 @@ class GeneralApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object2)) {
-            $_tempBody = $inline_object2;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -777,15 +777,15 @@ class GeneralApi
      * Delete All Objects by Type
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject9 $inline_object9 inline_object9 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function deleteAllObjectsByType($app_id, $inline_object9 = null)
+    public function deleteAllObjectsByType($app_id, $config = null)
     {
-        list($response) = $this->deleteAllObjectsByTypeWithHttpInfo($app_id, $inline_object9);
+        list($response) = $this->deleteAllObjectsByTypeWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -795,15 +795,15 @@ class GeneralApi
      * Delete All Objects by Type
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject9 $inline_object9 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteAllObjectsByTypeWithHttpInfo($app_id, $inline_object9 = null)
+    public function deleteAllObjectsByTypeWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->deleteAllObjectsByTypeRequest($app_id, $inline_object9);
+        $request = $this->deleteAllObjectsByTypeRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -884,14 +884,14 @@ class GeneralApi
      * Delete All Objects by Type
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject9 $inline_object9 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAllObjectsByTypeAsync($app_id, $inline_object9 = null)
+    public function deleteAllObjectsByTypeAsync($app_id, $config = null)
     {
-        return $this->deleteAllObjectsByTypeAsyncWithHttpInfo($app_id, $inline_object9)
+        return $this->deleteAllObjectsByTypeAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -905,15 +905,15 @@ class GeneralApi
      * Delete All Objects by Type
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject9 $inline_object9 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAllObjectsByTypeAsyncWithHttpInfo($app_id, $inline_object9 = null)
+    public function deleteAllObjectsByTypeAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = 'object';
-        $request = $this->deleteAllObjectsByTypeRequest($app_id, $inline_object9);
+        $request = $this->deleteAllObjectsByTypeRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -953,12 +953,12 @@ class GeneralApi
      * Create request for operation 'deleteAllObjectsByType'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject9 $inline_object9 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteAllObjectsByTypeRequest($app_id, $inline_object9 = null)
+    protected function deleteAllObjectsByTypeRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -987,8 +987,8 @@ class GeneralApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object9)) {
-            $_tempBody = $inline_object9;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -1063,15 +1063,15 @@ class GeneralApi
      * Delete Event
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject1 $inline_object1 inline_object1 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function deleteEvent($app_id, $inline_object1 = null)
+    public function deleteEvent($app_id, $config = null)
     {
-        list($response) = $this->deleteEventWithHttpInfo($app_id, $inline_object1);
+        list($response) = $this->deleteEventWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -1081,15 +1081,15 @@ class GeneralApi
      * Delete Event
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject1 $inline_object1 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEventWithHttpInfo($app_id, $inline_object1 = null)
+    public function deleteEventWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->deleteEventRequest($app_id, $inline_object1);
+        $request = $this->deleteEventRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1170,14 +1170,14 @@ class GeneralApi
      * Delete Event
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject1 $inline_object1 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEventAsync($app_id, $inline_object1 = null)
+    public function deleteEventAsync($app_id, $config = null)
     {
-        return $this->deleteEventAsyncWithHttpInfo($app_id, $inline_object1)
+        return $this->deleteEventAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1191,15 +1191,15 @@ class GeneralApi
      * Delete Event
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject1 $inline_object1 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEventAsyncWithHttpInfo($app_id, $inline_object1 = null)
+    public function deleteEventAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = 'object';
-        $request = $this->deleteEventRequest($app_id, $inline_object1);
+        $request = $this->deleteEventRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1239,12 +1239,12 @@ class GeneralApi
      * Create request for operation 'deleteEvent'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject1 $inline_object1 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteEventRequest($app_id, $inline_object1 = null)
+    protected function deleteEventRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1277,8 +1277,8 @@ class GeneralApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object1)) {
-            $_tempBody = $inline_object1;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -1353,15 +1353,15 @@ class GeneralApi
      * Delete Object
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject4 $inline_object4 inline_object4 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object|\Pipeless\Model\Errors
      */
-    public function deleteObject($app_id, $inline_object4 = null)
+    public function deleteObject($app_id, $config = null)
     {
-        list($response) = $this->deleteObjectWithHttpInfo($app_id, $inline_object4);
+        list($response) = $this->deleteObjectWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -1371,15 +1371,15 @@ class GeneralApi
      * Delete Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject4 $inline_object4 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteObjectWithHttpInfo($app_id, $inline_object4 = null)
+    public function deleteObjectWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->deleteObjectRequest($app_id, $inline_object4);
+        $request = $this->deleteObjectRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1480,14 +1480,14 @@ class GeneralApi
      * Delete Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject4 $inline_object4 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteObjectAsync($app_id, $inline_object4 = null)
+    public function deleteObjectAsync($app_id, $config = null)
     {
-        return $this->deleteObjectAsyncWithHttpInfo($app_id, $inline_object4)
+        return $this->deleteObjectAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1501,15 +1501,15 @@ class GeneralApi
      * Delete Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject4 $inline_object4 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteObjectAsyncWithHttpInfo($app_id, $inline_object4 = null)
+    public function deleteObjectAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = 'object';
-        $request = $this->deleteObjectRequest($app_id, $inline_object4);
+        $request = $this->deleteObjectRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1549,12 +1549,12 @@ class GeneralApi
      * Create request for operation 'deleteObject'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject4 $inline_object4 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteObjectRequest($app_id, $inline_object4 = null)
+    protected function deleteObjectRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1587,8 +1587,8 @@ class GeneralApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object4)) {
-            $_tempBody = $inline_object4;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -1663,15 +1663,15 @@ class GeneralApi
      * Edit Object
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject5 $inline_object5 inline_object5 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\ObjectReadable|\Pipeless\Model\Errors|\Pipeless\Model\Errors
      */
-    public function editObject($app_id, $inline_object5 = null)
+    public function editObject($app_id, $config = null)
     {
-        list($response) = $this->editObjectWithHttpInfo($app_id, $inline_object5);
+        list($response) = $this->editObjectWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -1681,15 +1681,15 @@ class GeneralApi
      * Edit Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject5 $inline_object5 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\ObjectReadable|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editObjectWithHttpInfo($app_id, $inline_object5 = null)
+    public function editObjectWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->editObjectRequest($app_id, $inline_object5);
+        $request = $this->editObjectRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1810,14 +1810,14 @@ class GeneralApi
      * Edit Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject5 $inline_object5 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editObjectAsync($app_id, $inline_object5 = null)
+    public function editObjectAsync($app_id, $config = null)
     {
-        return $this->editObjectAsyncWithHttpInfo($app_id, $inline_object5)
+        return $this->editObjectAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1831,15 +1831,15 @@ class GeneralApi
      * Edit Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject5 $inline_object5 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editObjectAsyncWithHttpInfo($app_id, $inline_object5 = null)
+    public function editObjectAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\ObjectReadable';
-        $request = $this->editObjectRequest($app_id, $inline_object5);
+        $request = $this->editObjectRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1879,12 +1879,12 @@ class GeneralApi
      * Create request for operation 'editObject'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject5 $inline_object5 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function editObjectRequest($app_id, $inline_object5 = null)
+    protected function editObjectRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1917,8 +1917,8 @@ class GeneralApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object5)) {
-            $_tempBody = $inline_object5;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
@@ -1993,15 +1993,15 @@ class GeneralApi
      * Get Object
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\InlineObject3 $inline_object3 inline_object3 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\ObjectReadable|\Pipeless\Model\Errors|\Pipeless\Model\Errors
      */
-    public function getObject($app_id, $inline_object3 = null)
+    public function getObject($app_id, $config = null)
     {
-        list($response) = $this->getObjectWithHttpInfo($app_id, $inline_object3);
+        list($response) = $this->getObjectWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -2011,15 +2011,15 @@ class GeneralApi
      * Get Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject3 $inline_object3 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\ObjectReadable|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getObjectWithHttpInfo($app_id, $inline_object3 = null)
+    public function getObjectWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getObjectRequest($app_id, $inline_object3);
+        $request = $this->getObjectRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2140,14 +2140,14 @@ class GeneralApi
      * Get Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject3 $inline_object3 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getObjectAsync($app_id, $inline_object3 = null)
+    public function getObjectAsync($app_id, $config = null)
     {
-        return $this->getObjectAsyncWithHttpInfo($app_id, $inline_object3)
+        return $this->getObjectAsyncWithHttpInfo($app_id, $config)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2161,15 +2161,15 @@ class GeneralApi
      * Get Object
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject3 $inline_object3 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getObjectAsyncWithHttpInfo($app_id, $inline_object3 = null)
+    public function getObjectAsyncWithHttpInfo($app_id, $config = null)
     {
         $returnType = '\Pipeless\Model\ObjectReadable';
-        $request = $this->getObjectRequest($app_id, $inline_object3);
+        $request = $this->getObjectRequest($app_id, $config);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2209,12 +2209,12 @@ class GeneralApi
      * Create request for operation 'getObject'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\InlineObject3 $inline_object3 (optional)
+     * @param  array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getObjectRequest($app_id, $inline_object3 = null)
+    protected function getObjectRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -2247,8 +2247,8 @@ class GeneralApi
 
         // body params
         $_tempBody = null;
-        if (isset($inline_object3)) {
-            $_tempBody = $inline_object3;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {
