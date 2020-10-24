@@ -2323,15 +2323,15 @@ class GeneralApi
      * Get Recent Events
      *
      * @param  int $app_id app_id (required)
-     * @param  \Pipeless\Model\GetRecentEventsConfig $get_recent_events_config get_recent_events_config (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Pipeless\Model\GetRecentEventsResultItem[]
      */
-    public function getRecentEvents($app_id, $get_recent_events_config = null)
+    public function getRecentEvents($app_id, $config = null)
     {
-        list($response) = $this->getRecentEventsWithHttpInfo($app_id, $get_recent_events_config);
+        list($response) = $this->getRecentEventsWithHttpInfo($app_id, $config);
         return $response;
     }
 
@@ -2341,15 +2341,15 @@ class GeneralApi
      * Get Recent Events
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\GetRecentEventsConfig $get_recent_events_config (optional)
+     * @param  array $config config (optional)
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Pipeless\Model\GetRecentEventsResultItem[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRecentEventsWithHttpInfo($app_id, $get_recent_events_config = null)
+    public function getRecentEventsWithHttpInfo($app_id, $config = null)
     {
-        $request = $this->getRecentEventsRequest($app_id, $get_recent_events_config);
+        $request = $this->getRecentEventsRequest($app_id, $config);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2499,12 +2499,12 @@ class GeneralApi
      * Create request for operation 'getRecentEvents'
      *
      * @param  int $app_id (required)
-     * @param  \Pipeless\Model\GetRecentEventsConfig $get_recent_events_config (optional)
+     * @param array $config config (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRecentEventsRequest($app_id, $get_recent_events_config = null)
+    protected function getRecentEventsRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -2533,8 +2533,8 @@ class GeneralApi
 
         // body params
         $_tempBody = null;
-        if (isset($get_recent_events_config)) {
-            $_tempBody = $get_recent_events_config;
+        if (isset($config)) {
+            $_tempBody = $config;
         }
 
         if ($multipart) {

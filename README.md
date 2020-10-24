@@ -1,6 +1,6 @@
 # Pipeless PHP bindings
 
-Description goes here
+Power real-time personalized recommendations and activity feeds using a simple API. https://docs.pipeless.io
 
 ## Requirements
 

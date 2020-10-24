@@ -38,7 +38,24 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'event' => [
+        'start_object' => [
+            'id' => 'Tim',
+            'type' => 'user',
+            'created_on' => '2020-09-20T21:57:06',
+        ],
+        'relationship' => [
+            'type' => 'interestedIn',
+            'created_on' => '2020-09-28T09:31:18',
+        ],
+        'end_object' => [
+            'id' => 'photography',
+            'type' => 'skill',
+            'created_on' => '2020-06-03T15:40:22',
+        ]
+    ]
+];
 
 try {
     $result = $apiInstance->createEvent($app_id, $params);
@@ -98,7 +115,42 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'events' => [
+        [
+            'start_object' => [
+                'id' => 'Tim',
+                'type' => 'user',
+                'created_on' => '2020-09-20T21:57:06',
+            ],
+            'relationship' => [
+                'type' => 'interestedIn',
+                'created_on' => '2020-09-28T09:31:18',
+            ],
+            'end_object' => [
+                'id' => 'photography',
+                'type' => 'skill',
+                'created_on' => '2020-06-03T15:40:22',
+            ]
+        ],
+        [
+            'start_object' => [
+                'id' => 'Tim',
+                'type' => 'user',
+                'created_on' => '2020-09-20T21:57:06',
+            ],
+            'relationship' => [
+                'type' => 'liked',
+                'created_on' => '2020-09-24T014:20:11',
+            ],
+            'end_object' => [
+                'id' => 'Article 123',
+                'type' => 'article',
+                'created_on' => '2020-07-05T05:51:02',
+            ]
+        ]
+    ]
+];
 
 try {
     $result = $apiInstance->createEventsBatch($app_id, $params);
@@ -158,7 +210,9 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'object_type' => 'user'
+];
 
 try {
     $result = $apiInstance->deleteAllObjectsByType($app_id, $params);
@@ -218,7 +272,21 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'event' => [
+        'start_object' => [
+            'id' => 'Tim',
+            'type' => 'user',
+        ],
+        'relationship' => [
+            'type' => 'liked',
+        ],
+        'end_object' => [
+            'id' => 'Article 123',
+            'type' => 'article',
+        ]
+    ]   
+];
 
 try {
     $result = $apiInstance->deleteEvent($app_id, $params);
@@ -278,7 +346,10 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'id' => 'Tim',
+    'type' => 'user',
+];
 
 try {
     $result = $apiInstance->deleteObject($app_id, $params);
@@ -338,7 +409,15 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'object' => [
+        'id' => '127.0.0.1',
+        'type' => 'user',
+    ],
+    'new_props' => [
+        'id' => 'Tim'
+    ]
+];
 
 try {
     $result = $apiInstance->editObject($app_id, $params);
@@ -398,7 +477,10 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'id' => 'McDonald\'s',
+    'type' => 'company',
+];
 
 try {
     $result = $apiInstance->getObject($app_id, $params);
@@ -458,10 +540,9 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$get_recent_events_config = new \Pipeless\Model\GetRecentEventsConfig(); // \Pipeless\Model\GetRecentEventsConfig | 
 
 try {
-    $result = $apiInstance->getRecentEvents($app_id, $get_recent_events_config);
+    $result = $apiInstance->getRecentEvents($app_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeneralApi->getRecentEvents: ', $e->getMessage(), PHP_EOL;
