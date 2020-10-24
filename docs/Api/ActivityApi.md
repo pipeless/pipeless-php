@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## getActivityActionsFeed
 
-> \Pipeless\Model\GetActivityActionsFeedResult getActivityActionsFeed($app_id, $inline_object8)
+> \Pipeless\Model\GetActivityActionsFeedResult getActivityActionsFeed($app_id, $params)
 
 Get Activity Actions Feed
 
@@ -22,14 +22,9 @@ Fetch the activity feed for a user (or any other object type). This activity fee
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\ActivityApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -38,10 +33,10 @@ $apiInstance = new Pipeless\Api\ActivityApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object8 = new \Pipeless\Model\InlineObject8(); // \Pipeless\Model\InlineObject8 | 
+$params = [];
 
 try {
-    $result = $apiInstance->getActivityActionsFeed($app_id, $inline_object8);
+    $result = $apiInstance->getActivityActionsFeed($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ActivityApi->getActivityActionsFeed: ', $e->getMessage(), PHP_EOL;
@@ -54,8 +49,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object8** | [**\Pipeless\Model\InlineObject8**](../Model/InlineObject8.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -77,7 +72,7 @@ Name | Type | Description  | Notes
 
 ## getActivityFeed
 
-> \Pipeless\Model\GetActivityFeedResult getActivityFeed($app_id, $inline_object7)
+> \Pipeless\Model\GetActivityFeedResult getActivityFeed($app_id, $params)
 
 Get Activity Feed
 
@@ -87,14 +82,9 @@ Fetch the activity feed for a user (or any other object type). This activity fee
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\ActivityApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -103,10 +93,10 @@ $apiInstance = new Pipeless\Api\ActivityApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object7 = new \Pipeless\Model\InlineObject7(); // \Pipeless\Model\InlineObject7 | 
+$params = [];
 
 try {
-    $result = $apiInstance->getActivityFeed($app_id, $inline_object7);
+    $result = $apiInstance->getActivityFeed($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ActivityApi->getActivityFeed: ', $e->getMessage(), PHP_EOL;
@@ -119,8 +109,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object7** | [**\Pipeless\Model\InlineObject7**](../Model/InlineObject7.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -142,7 +132,7 @@ Name | Type | Description  | Notes
 
 ## getActivityOnObject
 
-> \Pipeless\Model\GetActivityOnObjectResult getActivityOnObject($app_id, $inline_object6)
+> \Pipeless\Model\GetActivityOnObjectResult getActivityOnObject($app_id, $params)
 
 Get Activity on Object
 
@@ -152,14 +142,9 @@ Get activity that has taken place on a target object.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\ActivityApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -168,10 +153,10 @@ $apiInstance = new Pipeless\Api\ActivityApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object6 = new \Pipeless\Model\InlineObject6(); // \Pipeless\Model\InlineObject6 | 
+$params = [];
 
 try {
-    $result = $apiInstance->getActivityOnObject($app_id, $inline_object6);
+    $result = $apiInstance->getActivityOnObject($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ActivityApi->getActivityOnObject: ', $e->getMessage(), PHP_EOL;
@@ -184,8 +169,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object6** | [**\Pipeless\Model\InlineObject6**](../Model/InlineObject6.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 

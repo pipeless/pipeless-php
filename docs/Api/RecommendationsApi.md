@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## getRecommendedContent
 
-> \Pipeless\Model\RecommendationsResult getRecommendedContent($app_id, $inline_object10)
+> \Pipeless\Model\RecommendationsResult getRecommendedContent($app_id, $params)
 
 Get Recommended Content (for user)
 
@@ -22,14 +22,9 @@ Get Recommended Content (for user)
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\RecommendationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -38,10 +33,10 @@ $apiInstance = new Pipeless\Api\RecommendationsApi(
     $config
 );
 $app_id = '123'; // string | 
-$inline_object10 = new \Pipeless\Model\InlineObject10(); // \Pipeless\Model\InlineObject10 | 
+$params = [];
 
 try {
-    $result = $apiInstance->getRecommendedContent($app_id, $inline_object10);
+    $result = $apiInstance->getRecommendedContent($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RecommendationsApi->getRecommendedContent: ', $e->getMessage(), PHP_EOL;
@@ -54,8 +49,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **string**|  | [default to &#39;123&#39;]
- **inline_object10** | [**\Pipeless\Model\InlineObject10**](../Model/InlineObject10.md)|  | [optional]
+ **app_id** | **string**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -77,7 +72,7 @@ Name | Type | Description  | Notes
 
 ## getRecommendedUsersToFollow
 
-> \Pipeless\Model\RecommendationsResult getRecommendedUsersToFollow($app_id, $inline_object11)
+> \Pipeless\Model\RecommendationsResult getRecommendedUsersToFollow($app_id, $params)
 
 Get Recommended Users to Follow (for user)
 
@@ -87,14 +82,9 @@ For a given user (or any object type), get a list of recommended users for the t
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\RecommendationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -103,10 +93,10 @@ $apiInstance = new Pipeless\Api\RecommendationsApi(
     $config
 );
 $app_id = '123'; // string | 
-$inline_object11 = new \Pipeless\Model\InlineObject11(); // \Pipeless\Model\InlineObject11 | 
+$params = [];
 
 try {
-    $result = $apiInstance->getRecommendedUsersToFollow($app_id, $inline_object11);
+    $result = $apiInstance->getRecommendedUsersToFollow($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RecommendationsApi->getRecommendedUsersToFollow: ', $e->getMessage(), PHP_EOL;
@@ -119,8 +109,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **string**|  | [default to &#39;123&#39;]
- **inline_object11** | [**\Pipeless\Model\InlineObject11**](../Model/InlineObject11.md)|  | [optional]
+ **app_id** | **string**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -142,7 +132,7 @@ Name | Type | Description  | Notes
 
 ## getRelatedContent
 
-> \Pipeless\Model\RecommendationsResult getRelatedContent($app_id, $inline_object13)
+> \Pipeless\Model\RecommendationsResult getRelatedContent($app_id, $params)
 
 Get Related Content
 
@@ -152,14 +142,9 @@ Gets related content objects based on a specific piece of content of any type.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\RecommendationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -168,10 +153,10 @@ $apiInstance = new Pipeless\Api\RecommendationsApi(
     $config
 );
 $app_id = '123'; // string | 
-$inline_object13 = new \Pipeless\Model\InlineObject13(); // \Pipeless\Model\InlineObject13 | 
+$params = [];
 
 try {
-    $result = $apiInstance->getRelatedContent($app_id, $inline_object13);
+    $result = $apiInstance->getRelatedContent($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RecommendationsApi->getRelatedContent: ', $e->getMessage(), PHP_EOL;
@@ -184,8 +169,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **string**|  | [default to &#39;123&#39;]
- **inline_object13** | [**\Pipeless\Model\InlineObject13**](../Model/InlineObject13.md)|  | [optional]
+ **app_id** | **string**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -207,7 +192,7 @@ Name | Type | Description  | Notes
 
 ## getRelatedTags
 
-> \Pipeless\Model\RecommendationsResult getRelatedTags($app_id, $inline_object12)
+> \Pipeless\Model\RecommendationsResult getRelatedTags($app_id, $params)
 
 Get Related Tags
 
@@ -217,14 +202,9 @@ Gets related tags for a given tag (or any other object type, ex. category).
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\RecommendationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -233,10 +213,10 @@ $apiInstance = new Pipeless\Api\RecommendationsApi(
     $config
 );
 $app_id = '123'; // string | 
-$inline_object12 = new \Pipeless\Model\InlineObject12(); // \Pipeless\Model\InlineObject12 | 
+$params = [];
 
 try {
-    $result = $apiInstance->getRelatedTags($app_id, $inline_object12);
+    $result = $apiInstance->getRelatedTags($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RecommendationsApi->getRelatedTags: ', $e->getMessage(), PHP_EOL;
@@ -249,8 +229,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **string**|  | [default to &#39;123&#39;]
- **inline_object12** | [**\Pipeless\Model\InlineObject12**](../Model/InlineObject12.md)|  | [optional]
+ **app_id** | **string**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -272,7 +252,7 @@ Name | Type | Description  | Notes
 
 ## getRelatedUsers
 
-> \Pipeless\Model\RecommendationsResult getRelatedUsers($app_id, $inline_object14)
+> \Pipeless\Model\RecommendationsResult getRelatedUsers($app_id, $params)
 
 Get Related Users
 
@@ -282,14 +262,9 @@ Get related users based on a target user (or other type).
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\RecommendationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -298,10 +273,10 @@ $apiInstance = new Pipeless\Api\RecommendationsApi(
     $config
 );
 $app_id = '123'; // string | 
-$inline_object14 = new \Pipeless\Model\InlineObject14(); // \Pipeless\Model\InlineObject14 | 
+$params = [];
 
 try {
-    $result = $apiInstance->getRelatedUsers($app_id, $inline_object14);
+    $result = $apiInstance->getRelatedUsers($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RecommendationsApi->getRelatedUsers: ', $e->getMessage(), PHP_EOL;
@@ -314,8 +289,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **string**|  | [default to &#39;123&#39;]
- **inline_object14** | [**\Pipeless\Model\InlineObject14**](../Model/InlineObject14.md)|  | [optional]
+ **app_id** | **string**|  | [your app id]
+ **params** | array
 
 ### Return type
 

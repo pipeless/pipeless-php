@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## createEvent
 
-> object createEvent($app_id, $inline_object)
+> object createEvent($app_id, $params)
 
 Create Event
 
@@ -27,14 +27,9 @@ Create a single event.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\GeneralApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -43,10 +38,10 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object = new \Pipeless\Model\InlineObject(); // \Pipeless\Model\InlineObject | 
+$params = [];
 
 try {
-    $result = $apiInstance->createEvent($app_id, $inline_object);
+    $result = $apiInstance->createEvent($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeneralApi->createEvent: ', $e->getMessage(), PHP_EOL;
@@ -59,8 +54,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object** | [**\Pipeless\Model\InlineObject**](../Model/InlineObject.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -82,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## createEventsBatch
 
-> object createEventsBatch($app_id, $inline_object2)
+> object createEventsBatch($app_id, $params)
 
 Create Events Batch
 
@@ -92,14 +87,9 @@ Create up to 10 events in one API call.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\GeneralApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -108,10 +98,10 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object2 = new \Pipeless\Model\InlineObject2(); // \Pipeless\Model\InlineObject2 | 
+$params = [];
 
 try {
-    $result = $apiInstance->createEventsBatch($app_id, $inline_object2);
+    $result = $apiInstance->createEventsBatch($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeneralApi->createEventsBatch: ', $e->getMessage(), PHP_EOL;
@@ -124,8 +114,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object2** | [**\Pipeless\Model\InlineObject2**](../Model/InlineObject2.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -147,7 +137,7 @@ Name | Type | Description  | Notes
 
 ## deleteAllObjectsByType
 
-> object deleteAllObjectsByType($app_id, $inline_object9)
+> object deleteAllObjectsByType($app_id, $params)
 
 Delete All Objects by Type
 
@@ -157,14 +147,9 @@ Delete all objects (and associated events) of a specific object type.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\GeneralApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -173,10 +158,10 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object9 = new \Pipeless\Model\InlineObject9(); // \Pipeless\Model\InlineObject9 | 
+$params = [];
 
 try {
-    $result = $apiInstance->deleteAllObjectsByType($app_id, $inline_object9);
+    $result = $apiInstance->deleteAllObjectsByType($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeneralApi->deleteAllObjectsByType: ', $e->getMessage(), PHP_EOL;
@@ -189,8 +174,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object9** | [**\Pipeless\Model\InlineObject9**](../Model/InlineObject9.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -212,7 +197,7 @@ Name | Type | Description  | Notes
 
 ## deleteEvent
 
-> object deleteEvent($app_id, $inline_object1)
+> object deleteEvent($app_id, $params)
 
 Delete Event
 
@@ -222,14 +207,9 @@ Delete one or more events.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\GeneralApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -238,10 +218,10 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object1 = new \Pipeless\Model\InlineObject1(); // \Pipeless\Model\InlineObject1 | 
+$params = [];
 
 try {
-    $result = $apiInstance->deleteEvent($app_id, $inline_object1);
+    $result = $apiInstance->deleteEvent($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeneralApi->deleteEvent: ', $e->getMessage(), PHP_EOL;
@@ -254,8 +234,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object1** | [**\Pipeless\Model\InlineObject1**](../Model/InlineObject1.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -277,7 +257,7 @@ Name | Type | Description  | Notes
 
 ## deleteObject
 
-> object deleteObject($app_id, $inline_object4)
+> object deleteObject($app_id, $params)
 
 Delete Object
 
@@ -287,14 +267,9 @@ Delete a single object and all the relationships/events it's connected to.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\GeneralApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -303,10 +278,10 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object4 = new \Pipeless\Model\InlineObject4(); // \Pipeless\Model\InlineObject4 | 
+$params = [];
 
 try {
-    $result = $apiInstance->deleteObject($app_id, $inline_object4);
+    $result = $apiInstance->deleteObject($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeneralApi->deleteObject: ', $e->getMessage(), PHP_EOL;
@@ -319,8 +294,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object4** | [**\Pipeless\Model\InlineObject4**](../Model/InlineObject4.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -342,7 +317,7 @@ Name | Type | Description  | Notes
 
 ## editObject
 
-> \Pipeless\Model\ObjectReadable editObject($app_id, $inline_object5)
+> \Pipeless\Model\ObjectReadable editObject($app_id, $params)
 
 Edit Object
 
@@ -352,14 +327,9 @@ Edit the properties of an existing object.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\GeneralApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -368,10 +338,10 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object5 = new \Pipeless\Model\InlineObject5(); // \Pipeless\Model\InlineObject5 | 
+$params = [];
 
 try {
-    $result = $apiInstance->editObject($app_id, $inline_object5);
+    $result = $apiInstance->editObject($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeneralApi->editObject: ', $e->getMessage(), PHP_EOL;
@@ -384,8 +354,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object5** | [**\Pipeless\Model\InlineObject5**](../Model/InlineObject5.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -407,7 +377,7 @@ Name | Type | Description  | Notes
 
 ## getObject
 
-> \Pipeless\Model\ObjectReadable getObject($app_id, $inline_object3)
+> \Pipeless\Model\ObjectReadable getObject($app_id, $params)
 
 Get Object
 
@@ -417,14 +387,9 @@ Get basic info on a single object.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\GeneralApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -433,10 +398,10 @@ $apiInstance = new Pipeless\Api\GeneralApi(
     $config
 );
 $app_id = 123; // int | 
-$inline_object3 = new \Pipeless\Model\InlineObject3(); // \Pipeless\Model\InlineObject3 | 
+$params = [];
 
 try {
-    $result = $apiInstance->getObject($app_id, $inline_object3);
+    $result = $apiInstance->getObject($app_id, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeneralApi->getObject: ', $e->getMessage(), PHP_EOL;
@@ -449,8 +414,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
- **inline_object3** | [**\Pipeless\Model\InlineObject3**](../Model/InlineObject3.md)|  | [optional]
+ **app_id** | **int**|  | [your app id]
+ **params** | array
 
 ### Return type
 
@@ -482,14 +447,9 @@ Get recent events that have been sent to the specified app.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
 
 // Configure API key authorization: App_API_Key
-$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Pipeless\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
+$config = Pipeless\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'Bearer YOUR_API_KEY');
 
 $apiInstance = new Pipeless\Api\GeneralApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -514,7 +474,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **int**|  | [default to 123]
+ **app_id** | **int**|  | [your app id]
  **get_recent_events_config** | [**\Pipeless\Model\GetRecentEventsConfig**](../Model/GetRecentEventsConfig.md)|  | [optional]
 
 ### Return type
