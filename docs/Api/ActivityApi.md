@@ -33,7 +33,12 @@ $apiInstance = new Pipeless\Api\ActivityApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'object' => [
+        'id' => 'Tim',
+        'type' => 'user',
+    ]
+];
 
 try {
     $result = $apiInstance->getActivityActionsFeed($app_id, $params);
@@ -93,7 +98,12 @@ $apiInstance = new Pipeless\Api\ActivityApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'object' => [
+        'id' => 'Tim',
+        'type' => 'user',
+    ]
+];
 
 try {
     $result = $apiInstance->getActivityFeed($app_id, $params);
@@ -153,7 +163,12 @@ $apiInstance = new Pipeless\Api\ActivityApi(
     $config
 );
 $app_id = 123; // int | 
-$params = [];
+$params = [
+    'object' => [
+        'id' => 'David',
+        'type' => 'user',
+    ]
+];
 
 try {
     $result = $apiInstance->getActivityOnObject($app_id, $params);
