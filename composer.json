@@ -14,8 +14,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "OpenAPI-Generator contributors",
-            "homepage": "https://openapi-generator.tech"
+            "name": "Pipeless and contributors",
+            "homepage": "https://github.com/pipeless/pipeless-php/contributors"
         }
     ],
     "require": {
