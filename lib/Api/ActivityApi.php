@@ -342,7 +342,7 @@ class ActivityApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getActivityActionsFeedRequest($app_id, $config = null)
+    public function getActivityActionsFeedRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -672,7 +672,7 @@ class ActivityApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getActivityFeedRequest($app_id, $config = null)
+    public function getActivityFeedRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1002,7 +1002,7 @@ class ActivityApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getActivityOnObjectRequest($app_id, $config = null)
+    public function getActivityOnObjectRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {

@@ -342,7 +342,7 @@ class RecommendationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRecommendedContentRequest($app_id, $config = null)
+    public function getRecommendedContentRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -668,7 +668,7 @@ class RecommendationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRecommendedUsersToFollowRequest($app_id, $config = null)
+    public function getRecommendedUsersToFollowRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -954,7 +954,7 @@ class RecommendationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRelatedContentRequest($app_id, $config = null)
+    public function getRelatedContentRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1280,7 +1280,7 @@ class RecommendationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRelatedTagsRequest($app_id, $config = null)
+    public function getRelatedTagsRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1606,7 +1606,7 @@ class RecommendationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRelatedUsersRequest($app_id, $config = null)
+    public function getRelatedUsersRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {

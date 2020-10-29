@@ -342,7 +342,7 @@ class GeneralApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createEventRequest($app_id, $config = null)
+    public function createEventRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -672,7 +672,7 @@ class GeneralApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createEventsBatchRequest($app_id, $config = null)
+    public function createEventsBatchRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -958,7 +958,7 @@ class GeneralApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteAllObjectsByTypeRequest($app_id, $config = null)
+    public function deleteAllObjectsByTypeRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1244,7 +1244,7 @@ class GeneralApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteEventRequest($app_id, $config = null)
+    public function deleteEventRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1554,7 +1554,7 @@ class GeneralApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteObjectRequest($app_id, $config = null)
+    public function deleteObjectRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -1884,7 +1884,7 @@ class GeneralApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function editObjectRequest($app_id, $config = null)
+    public function editObjectRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -2214,7 +2214,7 @@ class GeneralApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getObjectRequest($app_id, $config = null)
+    public function getObjectRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
@@ -2504,7 +2504,7 @@ class GeneralApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRecentEventsRequest($app_id, $config = null)
+    public function getRecentEventsRequest($app_id, $config = null)
     {
         // verify the required parameter 'app_id' is set
         if ($app_id === null || (is_array($app_id) && count($app_id) === 0)) {
