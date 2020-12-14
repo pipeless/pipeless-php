@@ -1,6 +1,6 @@
 <?php
 /**
- * GetActivityActionsFeedResultEvents
+ * RecommendationsContentResultItems
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Pipeless\ObjectSerializer;
 
 /**
- * GetActivityActionsFeedResultEvents Class Doc Comment
+ * RecommendationsContentResultItems Class Doc Comment
  *
  * @category Class
  * @package  Pipeless
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
+class RecommendationsContentResultItems implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetActivityActionsFeedResult_events';
+    protected static $openAPIModelName = 'RecommendationsContentResult_items';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'action_object' => '\Pipeless\Model\ObjectReadable',
-        'actions' => '\Pipeless\Model\GetActivityActionsFeedResultActions[]',
-        'cursor' => 'string'
+        'object' => '\Pipeless\Model\ObjectReadable',
+        'authors' => '\Pipeless\Model\ObjectReadable[]'
     ];
 
     /**
@@ -68,9 +67,8 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'action_object' => null,
-        'actions' => null,
-        'cursor' => null
+        'object' => null,
+        'authors' => null
     ];
 
     /**
@@ -100,9 +98,8 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'action_object' => 'action_object',
-        'actions' => 'actions',
-        'cursor' => 'cursor'
+        'object' => 'object',
+        'authors' => 'authors'
     ];
 
     /**
@@ -111,9 +108,8 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'action_object' => 'setActionObject',
-        'actions' => 'setActions',
-        'cursor' => 'setCursor'
+        'object' => 'setObject',
+        'authors' => 'setAuthors'
     ];
 
     /**
@@ -122,9 +118,8 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'action_object' => 'getActionObject',
-        'actions' => 'getActions',
-        'cursor' => 'getCursor'
+        'object' => 'getObject',
+        'authors' => 'getAuthors'
     ];
 
     /**
@@ -187,9 +182,8 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['action_object'] = isset($data['action_object']) ? $data['action_object'] : null;
-        $this->container['actions'] = isset($data['actions']) ? $data['actions'] : null;
-        $this->container['cursor'] = isset($data['cursor']) ? $data['cursor'] : null;
+        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['authors'] = isset($data['authors']) ? $data['authors'] : null;
     }
 
     /**
@@ -201,11 +195,8 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['action_object'] === null) {
-            $invalidProperties[] = "'action_object' can't be null";
-        }
-        if ($this->container['actions'] === null) {
-            $invalidProperties[] = "'actions' can't be null";
+        if ($this->container['object'] === null) {
+            $invalidProperties[] = "'object' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,73 +214,49 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets action_object
+     * Gets object
      *
      * @return \Pipeless\Model\ObjectReadable
      */
-    public function getActionObject()
+    public function getObject()
     {
-        return $this->container['action_object'];
+        return $this->container['object'];
     }
 
     /**
-     * Sets action_object
+     * Sets object
      *
-     * @param \Pipeless\Model\ObjectReadable $action_object action_object
+     * @param \Pipeless\Model\ObjectReadable $object object
      *
      * @return $this
      */
-    public function setActionObject($action_object)
+    public function setObject($object)
     {
-        $this->container['action_object'] = $action_object;
+        $this->container['object'] = $object;
 
         return $this;
     }
 
     /**
-     * Gets actions
+     * Gets authors
      *
-     * @return \Pipeless\Model\GetActivityActionsFeedResultActions[]
+     * @return \Pipeless\Model\ObjectReadable[]|null
      */
-    public function getActions()
+    public function getAuthors()
     {
-        return $this->container['actions'];
+        return $this->container['authors'];
     }
 
     /**
-     * Sets actions
+     * Sets authors
      *
-     * @param \Pipeless\Model\GetActivityActionsFeedResultActions[] $actions actions
+     * @param \Pipeless\Model\ObjectReadable[]|null $authors authors
      *
      * @return $this
      */
-    public function setActions($actions)
+    public function setAuthors($authors)
     {
-        $this->container['actions'] = $actions;
-
-        return $this;
-    }
-
-    /**
-     * Gets cursor
-     *
-     * @return string|null
-     */
-    public function getCursor()
-    {
-        return $this->container['cursor'];
-    }
-
-    /**
-     * Sets cursor
-     *
-     * @param string|null $cursor cursor
-     *
-     * @return $this
-     */
-    public function setCursor($cursor)
-    {
-        $this->container['cursor'] = $cursor;
+        $this->container['authors'] = $authors;
 
         return $this;
     }

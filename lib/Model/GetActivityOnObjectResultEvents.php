@@ -59,7 +59,8 @@ class GetActivityOnObjectResultEvents implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'object' => '\Pipeless\Model\ObjectReadable',
         'relationship' => '\Pipeless\Model\RelationshipWriteable',
-        'direction' => '\Pipeless\Model\RelationshipDirection'
+        'direction' => '\Pipeless\Model\RelationshipDirection',
+        'cursor' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class GetActivityOnObjectResultEvents implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'object' => null,
         'relationship' => null,
-        'direction' => null
+        'direction' => null,
+        'cursor' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class GetActivityOnObjectResultEvents implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'object' => 'object',
         'relationship' => 'relationship',
-        'direction' => 'direction'
+        'direction' => 'direction',
+        'cursor' => 'cursor'
     ];
 
     /**
@@ -113,7 +116,8 @@ class GetActivityOnObjectResultEvents implements ModelInterface, ArrayAccess
     protected static $setters = [
         'object' => 'setObject',
         'relationship' => 'setRelationship',
-        'direction' => 'setDirection'
+        'direction' => 'setDirection',
+        'cursor' => 'setCursor'
     ];
 
     /**
@@ -124,7 +128,8 @@ class GetActivityOnObjectResultEvents implements ModelInterface, ArrayAccess
     protected static $getters = [
         'object' => 'getObject',
         'relationship' => 'getRelationship',
-        'direction' => 'getDirection'
+        'direction' => 'getDirection',
+        'cursor' => 'getCursor'
     ];
 
     /**
@@ -190,6 +195,7 @@ class GetActivityOnObjectResultEvents implements ModelInterface, ArrayAccess
         $this->container['object'] = isset($data['object']) ? $data['object'] : null;
         $this->container['relationship'] = isset($data['relationship']) ? $data['relationship'] : null;
         $this->container['direction'] = isset($data['direction']) ? $data['direction'] : null;
+        $this->container['cursor'] = isset($data['cursor']) ? $data['cursor'] : null;
     }
 
     /**
@@ -293,6 +299,30 @@ class GetActivityOnObjectResultEvents implements ModelInterface, ArrayAccess
     public function setDirection($direction)
     {
         $this->container['direction'] = $direction;
+
+        return $this;
+    }
+
+    /**
+     * Gets cursor
+     *
+     * @return string|null
+     */
+    public function getCursor()
+    {
+        return $this->container['cursor'];
+    }
+
+    /**
+     * Sets cursor
+     *
+     * @param string|null $cursor cursor
+     *
+     * @return $this
+     */
+    public function setCursor($cursor)
+    {
+        $this->container['cursor'] = $cursor;
 
         return $this;
     }

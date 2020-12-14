@@ -1,6 +1,6 @@
 <?php
 /**
- * GetActivityActionsFeedResultEvents
+ * RelationshipExistsResult
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Pipeless\ObjectSerializer;
 
 /**
- * GetActivityActionsFeedResultEvents Class Doc Comment
+ * RelationshipExistsResult Class Doc Comment
  *
  * @category Class
  * @package  Pipeless
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
+class RelationshipExistsResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetActivityActionsFeedResult_events';
+    protected static $openAPIModelName = 'RelationshipExistsResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,7 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'action_object' => '\Pipeless\Model\ObjectReadable',
-        'actions' => '\Pipeless\Model\GetActivityActionsFeedResultActions[]',
-        'cursor' => 'string'
+        'exists' => 'bool'
     ];
 
     /**
@@ -68,9 +66,7 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'action_object' => null,
-        'actions' => null,
-        'cursor' => null
+        'exists' => null
     ];
 
     /**
@@ -100,9 +96,7 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'action_object' => 'action_object',
-        'actions' => 'actions',
-        'cursor' => 'cursor'
+        'exists' => 'exists'
     ];
 
     /**
@@ -111,9 +105,7 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'action_object' => 'setActionObject',
-        'actions' => 'setActions',
-        'cursor' => 'setCursor'
+        'exists' => 'setExists'
     ];
 
     /**
@@ -122,9 +114,7 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'action_object' => 'getActionObject',
-        'actions' => 'getActions',
-        'cursor' => 'getCursor'
+        'exists' => 'getExists'
     ];
 
     /**
@@ -187,9 +177,7 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['action_object'] = isset($data['action_object']) ? $data['action_object'] : null;
-        $this->container['actions'] = isset($data['actions']) ? $data['actions'] : null;
-        $this->container['cursor'] = isset($data['cursor']) ? $data['cursor'] : null;
+        $this->container['exists'] = isset($data['exists']) ? $data['exists'] : null;
     }
 
     /**
@@ -201,12 +189,6 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['action_object'] === null) {
-            $invalidProperties[] = "'action_object' can't be null";
-        }
-        if ($this->container['actions'] === null) {
-            $invalidProperties[] = "'actions' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -223,73 +205,25 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets action_object
+     * Gets exists
      *
-     * @return \Pipeless\Model\ObjectReadable
+     * @return bool|null
      */
-    public function getActionObject()
+    public function getExists()
     {
-        return $this->container['action_object'];
+        return $this->container['exists'];
     }
 
     /**
-     * Sets action_object
+     * Sets exists
      *
-     * @param \Pipeless\Model\ObjectReadable $action_object action_object
+     * @param bool|null $exists exists
      *
      * @return $this
      */
-    public function setActionObject($action_object)
+    public function setExists($exists)
     {
-        $this->container['action_object'] = $action_object;
-
-        return $this;
-    }
-
-    /**
-     * Gets actions
-     *
-     * @return \Pipeless\Model\GetActivityActionsFeedResultActions[]
-     */
-    public function getActions()
-    {
-        return $this->container['actions'];
-    }
-
-    /**
-     * Sets actions
-     *
-     * @param \Pipeless\Model\GetActivityActionsFeedResultActions[] $actions actions
-     *
-     * @return $this
-     */
-    public function setActions($actions)
-    {
-        $this->container['actions'] = $actions;
-
-        return $this;
-    }
-
-    /**
-     * Gets cursor
-     *
-     * @return string|null
-     */
-    public function getCursor()
-    {
-        return $this->container['cursor'];
-    }
-
-    /**
-     * Sets cursor
-     *
-     * @param string|null $cursor cursor
-     *
-     * @return $this
-     */
-    public function setCursor($cursor)
-    {
-        $this->container['cursor'] = $cursor;
+        $this->container['exists'] = $exists;
 
         return $this;
     }

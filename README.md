@@ -78,6 +78,8 @@ Class | Method | HTTP request | Description
 *GeneralApi* | [**editObject**](docs/Api/GeneralApi.md#editobject) | **PATCH** /v1/apps/{app_id}/objects | Edit Object
 *GeneralApi* | [**getObject**](docs/Api/GeneralApi.md#getobject) | **GET** /v1/apps/{app_id}/objects | Get Object
 *GeneralApi* | [**getRecentEvents**](docs/Api/GeneralApi.md#getrecentevents) | **GET** /v1/apps/{app_id}/recent-events | Get Recent Events
+*GeneralApi* | [**getRelationshipCounts**](docs/Api/GeneralApi.md#getrelationshipcounts) | **GET** /v1/apps/{app_id}/relationship-counts | Get Relationship Counts
+*GeneralApi* | [**getRelationshipExists**](docs/Api/GeneralApi.md#getrelationshipexists) | **GET** /v1/apps/{app_id}/relationship-exists | Get Relationship Exists
 *RecommendationsApi* | [**getRecommendedContent**](docs/Api/RecommendationsApi.md#getrecommendedcontent) | **GET** /v1/apps/{app_id}/algos/recommendations/content | Get Recommended Content (for user)
 *RecommendationsApi* | [**getRecommendedUsersToFollow**](docs/Api/RecommendationsApi.md#getrecommendeduserstofollow) | **GET** /v1/apps/{app_id}/algos/recommendations/users-to-follow | Get Recommended Users to Follow (for user)
 *RecommendationsApi* | [**getRelatedContent**](docs/Api/RecommendationsApi.md#getrelatedcontent) | **GET** /v1/apps/{app_id}/algos/recommendations/related-content | Get Related Content
@@ -101,9 +103,14 @@ Class | Method | HTTP request | Description
  - [ObjectReadable](docs/Model/ObjectReadable.md)
  - [ObjectType](docs/Model/ObjectType.md)
  - [PageInfo](docs/Model/PageInfo.md)
+ - [RecommendationsContentResult](docs/Model/RecommendationsContentResult.md)
+ - [RecommendationsContentResultItems](docs/Model/RecommendationsContentResultItems.md)
  - [RecommendationsResult](docs/Model/RecommendationsResult.md)
  - [RecommendationsResultItems](docs/Model/RecommendationsResultItems.md)
+ - [RelationshipCountsResult](docs/Model/RelationshipCountsResult.md)
+ - [RelationshipCountsResultStats](docs/Model/RelationshipCountsResultStats.md)
  - [RelationshipDirection](docs/Model/RelationshipDirection.md)
+ - [RelationshipExistsResult](docs/Model/RelationshipExistsResult.md)
  - [RelationshipReadable](docs/Model/RelationshipReadable.md)
  - [RelationshipType](docs/Model/RelationshipType.md)
  - [RelationshipWriteable](docs/Model/RelationshipWriteable.md)
