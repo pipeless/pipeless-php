@@ -59,7 +59,8 @@ class GetActivityFeedResultEvents implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'actor_object' => '\Pipeless\Model\ObjectReadable',
         'action_relationship' => '\Pipeless\Model\RelationshipReadable',
-        'action_object' => '\Pipeless\Model\ObjectReadable'
+        'action_object' => '\Pipeless\Model\ObjectReadable',
+        'cursor' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class GetActivityFeedResultEvents implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'actor_object' => null,
         'action_relationship' => null,
-        'action_object' => null
+        'action_object' => null,
+        'cursor' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class GetActivityFeedResultEvents implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'actor_object' => 'actor_object',
         'action_relationship' => 'action_relationship',
-        'action_object' => 'action_object'
+        'action_object' => 'action_object',
+        'cursor' => 'cursor'
     ];
 
     /**
@@ -113,7 +116,8 @@ class GetActivityFeedResultEvents implements ModelInterface, ArrayAccess
     protected static $setters = [
         'actor_object' => 'setActorObject',
         'action_relationship' => 'setActionRelationship',
-        'action_object' => 'setActionObject'
+        'action_object' => 'setActionObject',
+        'cursor' => 'setCursor'
     ];
 
     /**
@@ -124,7 +128,8 @@ class GetActivityFeedResultEvents implements ModelInterface, ArrayAccess
     protected static $getters = [
         'actor_object' => 'getActorObject',
         'action_relationship' => 'getActionRelationship',
-        'action_object' => 'getActionObject'
+        'action_object' => 'getActionObject',
+        'cursor' => 'getCursor'
     ];
 
     /**
@@ -190,6 +195,7 @@ class GetActivityFeedResultEvents implements ModelInterface, ArrayAccess
         $this->container['actor_object'] = isset($data['actor_object']) ? $data['actor_object'] : null;
         $this->container['action_relationship'] = isset($data['action_relationship']) ? $data['action_relationship'] : null;
         $this->container['action_object'] = isset($data['action_object']) ? $data['action_object'] : null;
+        $this->container['cursor'] = isset($data['cursor']) ? $data['cursor'] : null;
     }
 
     /**
@@ -293,6 +299,30 @@ class GetActivityFeedResultEvents implements ModelInterface, ArrayAccess
     public function setActionObject($action_object)
     {
         $this->container['action_object'] = $action_object;
+
+        return $this;
+    }
+
+    /**
+     * Gets cursor
+     *
+     * @return string|null
+     */
+    public function getCursor()
+    {
+        return $this->container['cursor'];
+    }
+
+    /**
+     * Sets cursor
+     *
+     * @param string|null $cursor cursor
+     *
+     * @return $this
+     */
+    public function setCursor($cursor)
+    {
+        $this->container['cursor'] = $cursor;
 
         return $this;
     }

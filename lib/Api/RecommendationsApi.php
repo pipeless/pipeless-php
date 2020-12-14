@@ -125,7 +125,7 @@ class RecommendationsApi
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Pipeless\Model\RecommendationsResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors
+     * @return \Pipeless\Model\RecommendationsContentResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors
      */
     public function getRecommendedContent($app_id, $config = null)
     {
@@ -143,7 +143,7 @@ class RecommendationsApi
      *
      * @throws \Pipeless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Pipeless\Model\RecommendationsResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pipeless\Model\RecommendationsContentResult|\Pipeless\Model\Errors|\Pipeless\Model\Errors, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRecommendedContentWithHttpInfo($app_id, $config = null)
     {
@@ -180,14 +180,14 @@ class RecommendationsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Pipeless\Model\RecommendationsResult' === '\SplFileObject') {
+                    if ('\Pipeless\Model\RecommendationsContentResult' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Pipeless\Model\RecommendationsResult', []),
+                        ObjectSerializer::deserialize($content, '\Pipeless\Model\RecommendationsContentResult', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -217,7 +217,7 @@ class RecommendationsApi
                     ];
             }
 
-            $returnType = '\Pipeless\Model\RecommendationsResult';
+            $returnType = '\Pipeless\Model\RecommendationsContentResult';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -236,7 +236,7 @@ class RecommendationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Pipeless\Model\RecommendationsResult',
+                        '\Pipeless\Model\RecommendationsContentResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -296,8 +296,8 @@ class RecommendationsApi
      */
     public function getRecommendedContentAsyncWithHttpInfo($app_id, $config = null)
     {
-        $returnType = '\Pipeless\Model\RecommendationsResult';
         $request = $this->getRecommendedContentRequest($app_id, $config);
+        $returnType = '\Pipeless\Model\RecommendationsContentResult';
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())

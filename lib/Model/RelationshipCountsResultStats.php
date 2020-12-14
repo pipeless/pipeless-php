@@ -1,6 +1,6 @@
 <?php
 /**
- * GetActivityActionsFeedResultEvents
+ * RelationshipCountsResultStats
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Pipeless\ObjectSerializer;
 
 /**
- * GetActivityActionsFeedResultEvents Class Doc Comment
+ * RelationshipCountsResultStats Class Doc Comment
  *
  * @category Class
  * @package  Pipeless
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
+class RelationshipCountsResultStats implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetActivityActionsFeedResult_events';
+    protected static $openAPIModelName = 'RelationshipCountsResult_stats';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'action_object' => '\Pipeless\Model\ObjectReadable',
-        'actions' => '\Pipeless\Model\GetActivityActionsFeedResultActions[]',
-        'cursor' => 'string'
+        'type' => '\Pipeless\Model\ObjectType',
+        'direction' => 'string',
+        'other_object_type' => '\Pipeless\Model\ObjectType',
+        'count' => 'int'
     ];
 
     /**
@@ -68,9 +69,10 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'action_object' => null,
-        'actions' => null,
-        'cursor' => null
+        'type' => null,
+        'direction' => null,
+        'other_object_type' => null,
+        'count' => null
     ];
 
     /**
@@ -100,9 +102,10 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'action_object' => 'action_object',
-        'actions' => 'actions',
-        'cursor' => 'cursor'
+        'type' => 'type',
+        'direction' => 'direction',
+        'other_object_type' => 'other_object_type',
+        'count' => 'count'
     ];
 
     /**
@@ -111,9 +114,10 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'action_object' => 'setActionObject',
-        'actions' => 'setActions',
-        'cursor' => 'setCursor'
+        'type' => 'setType',
+        'direction' => 'setDirection',
+        'other_object_type' => 'setOtherObjectType',
+        'count' => 'setCount'
     ];
 
     /**
@@ -122,9 +126,10 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'action_object' => 'getActionObject',
-        'actions' => 'getActions',
-        'cursor' => 'getCursor'
+        'type' => 'getType',
+        'direction' => 'getDirection',
+        'other_object_type' => 'getOtherObjectType',
+        'count' => 'getCount'
     ];
 
     /**
@@ -168,8 +173,23 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const DIRECTION_INCOMING = 'incoming';
+    const DIRECTION_OUTGOING = 'outgoing';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDirectionAllowableValues()
+    {
+        return [
+            self::DIRECTION_INCOMING,
+            self::DIRECTION_OUTGOING,
+        ];
+    }
     
 
     /**
@@ -187,9 +207,10 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['action_object'] = isset($data['action_object']) ? $data['action_object'] : null;
-        $this->container['actions'] = isset($data['actions']) ? $data['actions'] : null;
-        $this->container['cursor'] = isset($data['cursor']) ? $data['cursor'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['direction'] = isset($data['direction']) ? $data['direction'] : null;
+        $this->container['other_object_type'] = isset($data['other_object_type']) ? $data['other_object_type'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
     }
 
     /**
@@ -201,11 +222,25 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['action_object'] === null) {
-            $invalidProperties[] = "'action_object' can't be null";
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
-        if ($this->container['actions'] === null) {
-            $invalidProperties[] = "'actions' can't be null";
+        if ($this->container['direction'] === null) {
+            $invalidProperties[] = "'direction' can't be null";
+        }
+        $allowedValues = $this->getDirectionAllowableValues();
+        if (!is_null($this->container['direction']) && !in_array($this->container['direction'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'direction', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['other_object_type'] === null) {
+            $invalidProperties[] = "'other_object_type' can't be null";
+        }
+        if ($this->container['count'] === null) {
+            $invalidProperties[] = "'count' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,73 +258,106 @@ class GetActivityActionsFeedResultEvents implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets action_object
+     * Gets type
      *
-     * @return \Pipeless\Model\ObjectReadable
+     * @return \Pipeless\Model\ObjectType
      */
-    public function getActionObject()
+    public function getType()
     {
-        return $this->container['action_object'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets action_object
+     * Sets type
      *
-     * @param \Pipeless\Model\ObjectReadable $action_object action_object
+     * @param \Pipeless\Model\ObjectType $type type
      *
      * @return $this
      */
-    public function setActionObject($action_object)
+    public function setType($type)
     {
-        $this->container['action_object'] = $action_object;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets actions
+     * Gets direction
      *
-     * @return \Pipeless\Model\GetActivityActionsFeedResultActions[]
+     * @return string
      */
-    public function getActions()
+    public function getDirection()
     {
-        return $this->container['actions'];
+        return $this->container['direction'];
     }
 
     /**
-     * Sets actions
+     * Sets direction
      *
-     * @param \Pipeless\Model\GetActivityActionsFeedResultActions[] $actions actions
+     * @param string $direction direction
      *
      * @return $this
      */
-    public function setActions($actions)
+    public function setDirection($direction)
     {
-        $this->container['actions'] = $actions;
+        $allowedValues = $this->getDirectionAllowableValues();
+        if (!in_array($direction, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'direction', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['direction'] = $direction;
 
         return $this;
     }
 
     /**
-     * Gets cursor
+     * Gets other_object_type
      *
-     * @return string|null
+     * @return \Pipeless\Model\ObjectType
      */
-    public function getCursor()
+    public function getOtherObjectType()
     {
-        return $this->container['cursor'];
+        return $this->container['other_object_type'];
     }
 
     /**
-     * Sets cursor
+     * Sets other_object_type
      *
-     * @param string|null $cursor cursor
+     * @param \Pipeless\Model\ObjectType $other_object_type other_object_type
      *
      * @return $this
      */
-    public function setCursor($cursor)
+    public function setOtherObjectType($other_object_type)
     {
-        $this->container['cursor'] = $cursor;
+        $this->container['other_object_type'] = $other_object_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     *
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int $count count
+     *
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
 
         return $this;
     }

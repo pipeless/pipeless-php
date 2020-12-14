@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## getRecommendedContent
 
-> \Pipeless\Model\RecommendationsResult getRecommendedContent($app_id, $params)
+> \Pipeless\Model\RecommendationsContentResult getRecommendedContent($app_id, $params)
 
 Get Recommended Content (for user)
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Pipeless\Model\RecommendationsResult**](../Model/RecommendationsResult.md)
+[**\Pipeless\Model\RecommendationsContentResult**](../Model/RecommendationsContentResult.md)
 
 ### Authorization
 
